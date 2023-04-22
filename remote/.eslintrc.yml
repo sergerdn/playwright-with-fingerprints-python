@@ -1,0 +1,32 @@
+env:
+  browser: true
+  commonjs: true
+  es2021: true
+  node: true
+extends: eslint:recommended
+plugins:
+  - import
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+rules:
+  indent:
+    - error
+    - 2
+  linebreak-style:
+    - error
+    - "windows"
+  quotes:
+    - error
+    - "double"
+  semi:
+    - error
+    - "always"
+  import/order:
+    - error
+    - newlines-between: always
+      alphabetize:
+        order: asc
+      pathGroups:
+        - pattern: '@/**'
+          group: internal
