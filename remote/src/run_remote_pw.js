@@ -8,25 +8,18 @@ const path = require("path")
 
 async function runContext(fingerprintKey, profileDirectory, port) {
   const fingerprint = await plugin.fetch(fingerprintKey, {
-    tags: ["Microsoft Windows", "Chrome"]
+    tags: ["Microsoft Windows", "Chrome"],
+    minBrowserVersion: 112,
+    minWidth: 1366,
+    minHeight: 768,
+    maxWidth: 1920,
+    maxHeight: 1080
   })
 
   plugin.useFingerprint(fingerprint)
 
   // Launch the browser instance:
   const browserContext = await plugin.launchPersistentContext(profileDirectory, {
-    headless: false,
-    args: [`--remote-debugging-port=${port}`]
-  })
-
-  console.log("Browser with context launched")
-
-  //await browserContext.close()
-}
-
-async function runContextPW(fingerprintKey, profileDirectory, port) {
-  // Launch the browser instance:
-  const browserContext = await chromium.launchPersistentContext(profileDirectory, {
     headless: false,
     args: [`--remote-debugging-port=${port}`]
   })
