@@ -13,7 +13,8 @@
     "lint": "eslint -c .eslintrc.yml src/**/*.ts test/**/*.ts",
     "lint-fix": "eslint -c .eslintrc.yml --fix src/**/*.js src/*.js",
     "format": "prettier --write src/ ",
-    "remote": "set NODE_ENV=development && node ./src/run_remote_pw.js"
+    "remote": "cross-env NODE_ENV=development node ./src/run_remote_pw.js",
+    "remote-debug": "cross-env NODE_ENV=development NODE_DEBUG=http,net,http2 node ./src/run_remote_pw.js >> logfile.txt 2>&1"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
@@ -24,6 +25,7 @@
     "@types/node": "^18.15.13",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.38.0",
     "eslint-plugin-import": "^2.27.5",
     "npm-check-updates": "^16.10.9",
