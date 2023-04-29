@@ -23,6 +23,9 @@ async function runContext(fingerprintKey, userDataDir, profileName, port) {
     maxWidth: 1920,
     maxHeight: 1080
   })
+  // Save the fingerprint to a file
+  await fs.writeFile(path.join(userDataDir, "fingerprint.json"), JSON.stringify(fingerprint))
+  await fs.writeFile(path.join(userDataDir, "fingerprint_1.json"), fingerprint)
 
   plugin.useFingerprint(fingerprint)
   // https://peter.sh/experiments/chromium-command-line-switches/
