@@ -17,21 +17,21 @@
     "remote-debug": "cross-env NODE_ENV=development NODE_DEBUG=http,net,http2 node ./src/run_remote_pw.js >> logfile.txt 2>&1"
   },
   "dependencies": {
-    "dotenv": "^16.0.3",
-    "playwright": "^1.33.0",
-    "playwright-with-fingerprints": "^1.2.0"
+    "dotenv": "^16.3.1",
+    "playwright": "^1.38.1",
+    "playwright-with-fingerprints": "^1.4.2"
   },
   "devDependencies": {
-    "@types/node": "^18.16.3",
-    "@typescript-eslint/eslint-plugin": "^5.59.1",
-    "@typescript-eslint/parser": "^5.59.1",
+    "@types/node": "^20.7.2",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
     "cross-env": "^7.0.3",
-    "eslint": "^8.39.0",
-    "eslint-plugin-import": "^2.27.5",
-    "npm-check-updates": "^16.10.9",
-    "prettier": "^2.8.8",
+    "eslint": "^8.50.0",
+    "eslint-plugin-import": "^2.28.1",
+    "npm-check-updates": "^16.14.4",
+    "prettier": "^3.0.3",
     "prettier-plugin-sort-imports": "^1.7.2",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.2.2"
   }
 }
