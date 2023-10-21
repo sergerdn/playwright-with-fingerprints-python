@@ -1,3 +1,4 @@
 .env
 .plugin-engine
 logfile.txt
+/node_modules/

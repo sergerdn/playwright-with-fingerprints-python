@@ -14,12 +14,14 @@
     "lint-fix": "eslint -c .eslintrc.yml --fix src/**/*.js src/*.js",
     "format": "prettier --write src/",
     "remote": "cross-env NODE_ENV=development node ./src/run_remote_pw.js",
-    "remote-debug": "cross-env NODE_ENV=development NODE_DEBUG=http,net,http2 node ./src/run_remote_pw.js >> logfile.txt 2>&1"
+    "remote-debug-node": "cross-env NODE_ENV=development NODE_DEBUG=http,net,http2 node ./src/run_remote_pw.js > logfile.txt 2>&1",
+    "remote-debug-all": "cross-env NODE_ENV=development NODE_DEBUG=http,net,http2 cross-env DEBUG=pw:protocol cross-env DEBUGP=true node ./src/run_remote_pw.js > logfile.txt 2>&1",
+    "remote-debug-all-no-logfile": "cross-env NODE_ENV=development NODE_DEBUG=http,net,http2 cross-env DEBUG=pw:protocol cross-env DEBUGP=true node ./src/run_remote_pw.js"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
-    "playwright": "^1.38.1",
-    "playwright-with-fingerprints": "^1.4.2"
+    "playwright": "^1.39.0",
+    "playwright-with-fingerprints": "^1.4.3"
   },
   "devDependencies": {
     "@types/node": "^20.7.2",
@@ -28,7 +30,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.50.0",
     "eslint-plugin-import": "^2.28.1",
-    "npm-check-updates": "^16.14.4",
+    "npm-check-updates": "^16.14.6",
     "prettier": "^3.0.3",
     "prettier-plugin-sort-imports": "^1.7.2",
     "ts-node": "^10.9.1",
